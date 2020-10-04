@@ -1,0 +1,150 @@
+info:
+  description: API Docs - Catalog (Product, Category)
+  title: Catalog (Product, Category)
+  version: ''
+openapi: 3.0.0
+paths:
+  /api/category/:
+    get:
+      operationId: category_list
+      tags:
+      - category
+    post:
+      operationId: category_create
+      tags:
+      - category
+  /api/category/{id}/:
+    delete:
+      operationId: category_delete
+      parameters:
+      - in: path
+        name: id
+        required: true
+        schema:
+          description: A unique integer value identifying this category.
+          title: id
+          type: integer
+      tags:
+      - category
+    get:
+      operationId: category_read
+      parameters:
+      - in: path
+        name: id
+        required: true
+        schema:
+          description: A unique integer value identifying this category.
+          title: id
+          type: integer
+      tags:
+      - category
+    patch:
+      operationId: category_partial_update
+      parameters:
+      - in: path
+        name: id
+        required: true
+        schema:
+          description: A unique integer value identifying this category.
+          title: id
+          type: integer
+      tags:
+      - category
+    put:
+      operationId: category_update
+      parameters:
+      - in: path
+        name: id
+        required: true
+        schema:
+          description: A unique integer value identifying this category.
+          title: id
+          type: integer
+      tags:
+      - category
+  /api/category/{id}/product/:
+    get:
+      operationId: category_product
+      parameters:
+      - in: path
+        name: id
+        required: true
+        schema:
+          description: A unique integer value identifying this category.
+          title: id
+          type: integer
+      tags:
+      - category
+  /api/product/:
+    get:
+      operationId: product_list
+      tags:
+      - product
+    post:
+      operationId: product_create
+      tags:
+      - product
+  /api/product/{id}/:
+    delete:
+      operationId: product_delete
+      parameters:
+      - in: path
+        name: id
+        required: true
+        schema:
+          description: A unique integer value identifying this product.
+          title: id
+          type: integer
+      tags:
+      - product
+    get:
+      operationId: product_read
+      parameters:
+      - in: path
+        name: id
+        required: true
+        schema:
+          description: A unique integer value identifying this product.
+          title: id
+          type: integer
+      tags:
+      - product
+    patch:
+      operationId: product_partial_update
+      parameters:
+      - in: path
+        name: id
+        required: true
+        schema:
+          description: A unique integer value identifying this product.
+          title: id
+          type: integer
+      tags:
+      - product
+    put:
+      operationId: product_update
+      parameters:
+      - in: path
+        name: id
+        required: true
+        schema:
+          description: A unique integer value identifying this product.
+          title: id
+          type: integer
+      tags:
+      - product
+  /api/product/{id}/category/:
+    get:
+      operationId: product_category
+      parameters:
+      - in: path
+        name: id
+        required: true
+        schema:
+          description: A unique integer value identifying this product.
+          title: id
+          type: integer
+      tags:
+      - product
+servers:
+- url: http://127.0.0.1:8000/docs/?format=openapi

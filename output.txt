@@ -1,0 +1,305 @@
+-----------------------------------------------------------------
+- Categoy List
+-----------------------------------------------------------------
+URL: http://127.0.0.1:8000/api/category/
+Response:
+[
+    {
+        "id": 1,
+        "name": "Electronics",
+        "parent": null,
+        "childcategories": [
+            {
+                "id": 4,
+                "name": "Desktop PCs",
+                "parent": 1,
+                "childcategories": [
+                    {
+                        "id": 9,
+                        "name": "Development Desktop",
+                        "parent": 4,
+                        "childcategories": []
+                    },
+                    {
+                        "id": 8,
+                        "name": "Gaming Desktop",
+                        "parent": 4,
+                        "childcategories": []
+                    }
+                ]
+            },
+            {
+                "id": 3,
+                "name": "Laptop",
+                "parent": 1,
+                "childcategories": []
+            },
+            {
+                "id": 2,
+                "name": "Mobile",
+                "parent": 1,
+                "childcategories": []
+            }
+        ]
+    },
+    {
+        "id": 2,
+        "name": "Mobile",
+        "parent": 1,
+        "childcategories": []
+    },
+    {
+        "id": 3,
+        "name": "Laptop",
+        "parent": 1,
+        "childcategories": []
+    },
+    {
+        "id": 4,
+        "name": "Desktop PCs",
+        "parent": 1,
+        "childcategories": [
+            {
+                "id": 9,
+                "name": "Development Desktop",
+                "parent": 4,
+                "childcategories": []
+            },
+            {
+                "id": 8,
+                "name": "Gaming Desktop",
+                "parent": 4,
+                "childcategories": []
+            }
+        ]
+    },
+    {
+        "id": 5,
+        "name": "TV & Appliences",
+        "parent": null,
+        "childcategories": [
+            {
+                "id": 7,
+                "name": "Smart & Ultra HD",
+                "parent": 5,
+                "childcategories": []
+            },
+            {
+                "id": 6,
+                "name": "Television",
+                "parent": 5,
+                "childcategories": []
+            }
+        ]
+    },
+    {
+        "id": 6,
+        "name": "Television",
+        "parent": 5,
+        "childcategories": []
+    },
+    {
+        "id": 7,
+        "name": "Smart & Ultra HD",
+        "parent": 5,
+        "childcategories": []
+    },
+    {
+        "id": 8,
+        "name": "Gaming Desktop",
+        "parent": 4,
+        "childcategories": []
+    },
+    {
+        "id": 9,
+        "name": "Development Desktop",
+        "parent": 4,
+        "childcategories": []
+    }
+]
+
+-----------------------------------------------------------------
+- Get Specific category
+-----------------------------------------------------------------
+URL: http://127.0.0.1:8000/api/category/3/
+Response:
+{
+    "id": 3,
+    "name": "Laptop",
+    "parent": 1,
+    "childcategories": []
+}
+
+-----------------------------------------------------------------
+- Product
+-----------------------------------------------------------------
+URL: http://127.0.0.1:8000/api/product/
+Response:
+[
+    {
+        "id": 2,
+        "name": "Apple i7",
+        "price": "34000.00",
+        "categories": [
+            1,
+            2
+        ]
+    },
+    {
+        "id": 3,
+        "name": "Moto G S5Plus",
+        "price": "12000.00",
+        "categories": [
+            1,
+            2
+        ]
+    },
+    {
+        "id": 4,
+        "name": "Asus ROG Gamming",
+        "price": "120000.00",
+        "categories": [
+            1,
+            4,
+            8
+        ]
+    },
+    {
+        "id": 5,
+        "name": "Android Smart TV 74 inc",
+        "price": "120000.00",
+        "categories": [
+            1,
+            6,
+            7
+        ]
+    },
+    {
+        "id": 1,
+        "name": "Lenovo Ultrabook",
+        "price": "74000.00",
+        "categories": [
+            1,
+            3
+        ]
+    }
+]
+
+-----------------------------------------------------------------
+- Get Specific product
+-----------------------------------------------------------------
+URL: http://127.0.0.1:8000/api/product/1/
+Response:
+{
+    "id": 1,
+    "name": "Lenovo Ultrabook",
+    "price": "74000.00",
+    "categories": [
+        1,
+        3
+    ]
+}
+-----------------------------------------------------------------
+- Update Specific product [PUT]
+-----------------------------------------------------------------
+URL: http://127.0.0.1:8000/api/product/3/
+Media type: application/json
+Content:
+{
+    "id": 3,
+    "name": "Moto G S5Plus",
+    "price": "12000.00",
+    "categories": [
+        1,
+        2
+    ]
+}
+Response:
+{
+    "id": 3,
+    "name": "Moto G S5Plus",
+    "price": "12000.00",
+    "categories": [
+        1,
+        2
+    ]
+}
+
+-----------------------------------------------------------------
+- Get all categories by a product. (/product/{product_id}/category)
+-----------------------------------------------------------------
+URL: http://127.0.0.1:8000/api/product/3/category/
+Response:
+[
+    {
+        "id": 1,
+        "name": "Electronics",
+        "parent": null,
+        "childcategories": [
+            {
+                "id": 4,
+                "name": "Desktop PCs",
+                "parent": 1,
+                "childcategories": [
+                    {
+                        "id": 9,
+                        "name": "Development Desktop",
+                        "parent": 4,
+                        "childcategories": []
+                    },
+                    {
+                        "id": 8,
+                        "name": "Gaming Desktop",
+                        "parent": 4,
+                        "childcategories": []
+                    }
+                ]
+            },
+            {
+                "id": 3,
+                "name": "Laptop",
+                "parent": 1,
+                "childcategories": []
+            },
+            {
+                "id": 2,
+                "name": "Mobile",
+                "parent": 1,
+                "childcategories": []
+            }
+        ]
+    },
+    {
+        "id": 2,
+        "name": "Mobile",
+        "parent": 1,
+        "childcategories": []
+    }
+]
+
+-----------------------------------------------------------------
+- Get all products by a categoryy. (/category/{category_id}/product)
+-----------------------------------------------------------------
+URL: http://127.0.0.1:8000/api/category/2/product/
+Response:
+[
+    {
+        "id": 2,
+        "name": "Apple i7",
+        "price": "34000.00",
+        "categories": [
+            1,
+            2
+        ]
+    },
+    {
+        "id": 3,
+        "name": "Moto G S5Plus",
+        "price": "12000.00",
+        "categories": [
+            1,
+            2
+        ]
+    }
+]
+-----------------------------------------------------------------
